@@ -2,37 +2,41 @@ import React from 'react'
 
 import OptionsForm from './options-form'
 
-import blackUnicorn from './black.png';
-
 class OptionsFormContainer extends React.Component {
   constructor(props) {
     super(props);
 
+    const images = props.product.images;
+    const defaultImage = images.find(image => image.file.url.includes('black'));
+
     this.state = {
-      color: 'black'
+      url: defaultImage.file.url,
+      alt: defaultImage.description
     };
 
-    this.renderImage = this.renderImage.bind(this);
+    this.updateImage = this.updateImage.bind(this);
   }
 
-  renderImage() {
-    // Get all the possible images from the gallery
-    // Choose the appropriate image based on this.state.color
-    // Return that image path
+  updateImage(color) {
+    const newImage = this.props.product.images.find(image => image.file.url.includes(color));
 
-    return blackUnicorn;
+    this.setState({
+      url: newImage.file.url,
+      alt: newImage.description
+    });
   }
 
   render() {
     return (
       <div className="options-container">
         <div className="form-container">
-          <OptionsForm 
-            options={this.props.options}
+          <OptionsForm
+            product={this.props.product}
             onFormSubmit={this.props.onFormSubmit}
+            onColorChange={this.updateImage}
           />
         </div>
-        <div className="image-container"><img src={this.renderImage()} alt="Unicorn" /></div>
+        <div className="image-container"><img src={this.state.url} alt={this.state.alt} /></div>
       </div>
     )
   }

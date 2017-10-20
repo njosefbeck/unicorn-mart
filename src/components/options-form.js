@@ -13,19 +13,15 @@ function convertCentsToWholeDollars(cents) {
   return cents / 100;
 }
 
-function calculatePrice(amount, price) {
-  return amount * price;
-}
-
 class OptionsForm extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
       amount: 0,
-      color: 'black',
-      size: 'tiny',
-      price: this.props.options.price,
+      color: this.props.product.colors[0],
+      size: this.props.product.sizes[0],
+      price: 0,
       error: ''
     };
 
@@ -42,7 +38,8 @@ class OptionsForm extends React.Component {
       error = 'Amount can\'t be blank!';
     }
 
-    const price = amount * this.props.options.price;
+    const price = amount * this.props.product.price;
+
     this.setState({
       amount,
       price,
@@ -53,6 +50,10 @@ class OptionsForm extends React.Component {
   handleSelectChange(event) {
     const value = event.target.value;
     const name = event.target.name;
+
+    if (name === 'color') {
+      this.props.onColorChange(event.target.value);
+    }
 
     this.setState({
       [name]: value
@@ -69,8 +70,8 @@ class OptionsForm extends React.Component {
     }
 
     const product = {
-      id: uuid(),
-      productId: 350,
+      id: this.props.product.id,
+      productId: this.props.product.productId,
       amount: this.state.amount,
       price: this.state.price,
       color: this.state.color,
@@ -82,19 +83,19 @@ class OptionsForm extends React.Component {
     // Reset form values
     this.setState({
       amount: 0,
-      color: 'black',
-      size: 'tiny',
+      color: this.props.product.colors[0],
+      size: this.props.product.sizes[0],
       price: 0,
       error: ''
     });
   }
 
   render() {
-    const colors = this.props.options.colors.map(color => {
+    const colors = this.props.product.colors.map(color => {
       return <option key={color} value={color}>{color}</option>;
     });
 
-    const sizes = this.props.options.sizes.map(size => {
+    const sizes = this.props.product.sizes.map(size => {
       return <option key={size} value={size}>{size}</option>;
     });
 

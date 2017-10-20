@@ -10,12 +10,7 @@ class IndexPage extends React.Component {
     super(props);
 
     this.state = {
-      options: {
-        colors: ["black", "white", "rainbow", "mauve", "mustard", "teal", "pink"],
-        sizes: ["tiny", "small", "medium", "large", "huge"],
-        price: 10
-      },
-      products: props.data.allContentfulProduct.edges.map(edge => edge.node),
+      product: props.data.allContentfulProduct.edges[0].node,
       cart: {
         date: Date.now(),
         items: []
@@ -68,8 +63,8 @@ class IndexPage extends React.Component {
 
         <section>
           <h2>Your Unicorn Options</h2>
-          <OptionsFormContainer 
-            options={this.state.options}
+          <OptionsFormContainer
+            product={this.state.product}
             onFormSubmit={this.handleFormSubmit}
           />
         </section>

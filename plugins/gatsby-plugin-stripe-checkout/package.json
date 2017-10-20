@@ -1,0 +1,17 @@
+{
+  "name": "gatsby-plugin-stripe-checkout",
+  "description": "Gatsby plugin to add Stripe Checkout integration onto site",
+  "version": "",
+  "author": "Nathan Beck <njosefbeck@gmail.com>",
+  "devDependencies": {},
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "stripe",
+    "stripe checkout"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {},
+  "dependencies": {}
+}

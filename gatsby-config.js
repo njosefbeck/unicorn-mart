@@ -20,5 +20,9 @@ module.exports = {
         accessToken: tokens.CONTENTFUL_ACCESS_TOKEN,
       },
     },
+    {
+      resolve: `gatsby-plugin-stripe-checkout`,
+      options: {}
+    }
   ],
 }

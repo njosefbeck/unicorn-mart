@@ -1,0 +1,149 @@
+import React from 'react';
+import uuid from 'uuid/v4';
+
+function pluralize(item) {
+  return item === 1 ? '' : 's';
+}
+
+function convertWholeDollarsToCents(dollars) {
+  return dollars * 100;
+}
+
+function convertCentsToWholeDollars(cents) {
+  return cents / 100;
+}
+
+function calculatePrice(amount, price) {
+  return amount * price;
+}
+
+class OptionsForm extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      amount: 0,
+      color: 'black',
+      size: 'tiny',
+      price: this.props.options.price,
+      error: ''
+    };
+
+    this.handleAmountChange = this.handleAmountChange.bind(this);
+    this.handleSelectChange = this.handleSelectChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleAmountChange(event) {
+    const amount = parseInt(event.target.value, 10);
+    let error = '';
+    
+    if (isNaN(amount)) {
+      error = 'Amount can\'t be blank!';
+    }
+
+    const price = amount * this.props.options.price;
+    this.setState({
+      amount,
+      price,
+      error
+    });
+  }
+
+  handleSelectChange(event) {
+    const value = event.target.value;
+    const name = event.target.name;
+
+    this.setState({
+      [name]: value
+    });
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+
+    if (isNaN(this.state.amount)) {
+      return this.setState({
+        error: 'Amount still can\'t be blank!'
+      });
+    }
+
+    const product = {
+      id: uuid(),
+      productId: 350,
+      amount: this.state.amount,
+      price: this.state.price,
+      color: this.state.color,
+      size: this.state.size
+    };
+
+    this.props.onFormSubmit(product);
+
+    // Reset form values
+    this.setState({
+      amount: 0,
+      color: 'black',
+      size: 'tiny',
+      price: 0,
+      error: ''
+    });
+  }
+
+  render() {
+    const colors = this.props.options.colors.map(color => {
+      return <option key={color} value={color}>{color}</option>;
+    });
+
+    const sizes = this.props.options.sizes.map(size => {
+      return <option key={size} value={size}>{size}</option>;
+    });
+
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <div className="form-element">
+          <p className="error">{this.state.error}</p>
+          <label>
+            <span className="label">Amount:</span>
+            <input 
+              type="number"
+              name="amount"
+              min="0"
+              value={this.state.amount}
+              onChange={this.handleAmountChange}
+            />
+          </label>
+        </div>
+        <div className="form-element">
+          <label>
+            <span className="label">Color:</span>
+            <select
+              value={this.state.color}
+              name="color"
+              onChange={this.handleSelectChange}
+            >
+              {colors}
+            </select>
+          </label>
+        </div>
+        <div className="form-element">
+          <label>
+            <span className="label">Size:</span>
+            <select
+              value={this.state.size}
+              name="size"
+              onChange={this.handleSelectChange}
+            >
+              {sizes}
+            </select>
+          </label>
+        </div>
+        <button type="submit" name="submit">
+          {`Add ${isNaN(this.state.amount) ? '__' : this.state.amount} ${this.state.size}, ${this.state.color} unicorn${pluralize(this.state.amount)} for $${isNaN(this.state.price) ? '__' : this.state.price} to your cart?`}
+        </button>
+
+      </form>
+    );
+  }
+}
+
+export default OptionsForm

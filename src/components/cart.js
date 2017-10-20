@@ -1,5 +1,18 @@
 import React from 'react'
 
+const stripeHandler = StripeCheckout.configure({
+  key: 'pk_test_U78fJAAuXr0aN5ETF5qSNR1n',
+  locale: 'auto',
+});
+
+function convertWholeDollarsToCents(dollars) {
+  return dollars * 100;
+}
+
+function convertCentsToWholeDollars(cents) {
+  return cents / 100;
+}
+
 function calculateProductTotals(items) {
   const totalAmount = items
     .map(item => item.amount)
@@ -22,6 +35,30 @@ class Cart extends React.Component {
     this.renderStatus = this.renderStatus.bind(this);
     this.renderCartItems = this.renderCartItems.bind(this);
     this.removeFromCart = this.removeFromCart.bind(this);
+    this.openStripeCheckout = this.openStripeCheckout.bind(this);
+  }
+
+  openStripeCheckout(event) {
+
+    const image = this.props.product.images.find(image => image.file.url.includes('black'));
+    const imageUrl = image.file.url;
+
+    const cartItems = this.props.cart.items;
+    const totals = calculateProductTotals(cartItems);
+
+    event.preventDefault();
+    stripeHandler.open({
+      name: 'Unicorn Mart',
+      image: imageUrl,
+      description: `${totals.amount} unicorn(s)`,
+      zipCode: true,
+      billingAddress: true,
+      shippingAddress: true,
+      amount: convertWholeDollarsToCents(totals.price),
+      token(token, args) {
+        console.log(token, args, this.props.cart);
+      }
+    });
   }
 
   renderStatus() {
@@ -70,7 +107,7 @@ class Cart extends React.Component {
         <div>
           <p className="status" dangerouslySetInnerHTML={this.renderStatus()} />
 
-          <button className="buy" name="buy">Buy Now!</button>
+          <button className="buy" name="buy" onClick={(e) => this.openStripeCheckout(e)}>Buy Now!</button>
 
           <button className="clear-cart" name="clear-cart" onClick={this.props.removeAllFromCart}>Clear All</button>
 

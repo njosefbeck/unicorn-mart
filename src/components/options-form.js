@@ -5,14 +5,6 @@ function pluralize(item) {
   return item === 1 ? '' : 's';
 }
 
-function convertWholeDollarsToCents(dollars) {
-  return dollars * 100;
-}
-
-function convertCentsToWholeDollars(cents) {
-  return cents / 100;
-}
-
 class OptionsForm extends React.Component {
   constructor(props) {
     super(props);

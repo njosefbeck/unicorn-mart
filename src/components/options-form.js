@@ -70,7 +70,8 @@ class OptionsForm extends React.Component {
     }
 
     const product = {
-      id: this.props.product.id,
+      id: uuid(),
+      contentfulId: this.props.product.id,
       productId: this.props.product.productId,
       amount: this.state.amount,
       price: this.state.price,

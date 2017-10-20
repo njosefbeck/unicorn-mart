@@ -1,7 +1,5 @@
 import React from 'react'
 
-import blackUnicorn from '../components/black.png';
-
 function calculateProductTotals(items) {
   const totalAmount = items
     .map(item => item.amount)
@@ -44,10 +42,14 @@ class Cart extends React.Component {
 
   renderCartItems() {
     return this.props.cart.items.map(item => {
+
+      // Render proper image
+      const image = this.props.product.images.find(image => image.file.url.includes(item.color));
+
       return (
         <li className="cart-item" key={item.id}>
           <div className="cancel" onClick={(e) => this.removeFromCart(item.id)}>remove</div>
-          <img src={blackUnicorn} alt="Black Unicorn" />
+          <img src={image.file.url} alt={image.description} />
           <p className="description">{item.amount} {item.size}, {item.color} unicorns</p>
           <p className="price">${item.price}</p>
         </li>
@@ -63,8 +65,6 @@ class Cart extends React.Component {
       );
 
     } else {
-
-      
 
       return (
         <div>

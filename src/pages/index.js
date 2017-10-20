@@ -1,5 +1,6 @@
 import React from 'react'
-import Link from 'gatsby-link'
+import uuid from 'uuid/v4';
+import moment from 'moment';
 
 import './index.css';
 import OptionsFormContainer from '../components/options-form-container'
@@ -12,7 +13,8 @@ class IndexPage extends React.Component {
     this.state = {
       product: props.data.allContentfulProduct.edges[0].node,
       cart: {
-        date: Date.now(),
+        id: "",
+        date: "",
         items: []
       }
     };
@@ -29,6 +31,8 @@ class IndexPage extends React.Component {
     
     this.setState({
       cart: {
+        id: uuid(),
+        date: moment().format('MMMM Do YYYY, h:mm:ss a'),
         items
       }
     });
@@ -43,6 +47,8 @@ class IndexPage extends React.Component {
     
     this.setState({
       cart: {
+        id: uuid(),
+        date: moment().format('MMMM Do YYYY, h:mm:ss a'),
         items
       }
     })
@@ -51,6 +57,8 @@ class IndexPage extends React.Component {
   removeAllFromCart() {
     this.setState({
       cart: {
+        id: '',
+        date: '',
         items: []
       }
     })
@@ -73,6 +81,7 @@ class IndexPage extends React.Component {
           <h2>Your Cart</h2>
           <Cart 
             cart={this.state.cart}
+            product={this.state.product}
             removeFromCart={this.removeFromCart}
             removeAllFromCart={this.removeAllFromCart}
           />

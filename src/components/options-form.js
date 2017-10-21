@@ -1,9 +1,7 @@
 import React from 'react';
 import uuid from 'uuid/v4';
 
-function pluralize(item) {
-  return item === 1 ? '' : 's';
-}
+import { pluralize } from '../helpers.js';
 
 class OptionsForm extends React.Component {
   constructor(props) {

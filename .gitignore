@@ -7,4 +7,3 @@ public/
 .DS_Store
 yarn-error.log
 .env.development
-tokens.js

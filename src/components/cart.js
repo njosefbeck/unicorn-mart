@@ -1,9 +1,11 @@
 import React from 'react'
 
-const stripeHandler = StripeCheckout.configure({
-  key: 'pk_test_U78fJAAuXr0aN5ETF5qSNR1n',
-  locale: 'auto',
-});
+if (typeof window !== 'undefined') {
+  const stripeHandler = StripeCheckout.configure({
+    key: 'pk_test_U78fJAAuXr0aN5ETF5qSNR1n',
+    locale: 'auto',
+  });
+}
 
 function convertWholeDollarsToCents(dollars) {
   return dollars * 100;

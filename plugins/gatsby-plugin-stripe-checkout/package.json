@@ -1,6 +1,6 @@
 {
   "name": "gatsby-plugin-stripe-checkout",
-  "description": "Gatsby plugin to add Stripe Checkout integration onto site",
+  "description": "Gatsby plugin to add Stripe Checkout integration to site",
   "version": "",
   "author": "Nathan Beck <njosefbeck@gmail.com>",
   "devDependencies": {},

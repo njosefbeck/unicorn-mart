@@ -1,4 +1,3 @@
-//const tokens = require('./tokens');
 let contentfulSpaceId = '';
 let contentfulAccessToken = '';
 

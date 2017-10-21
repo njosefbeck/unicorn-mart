@@ -2,13 +2,6 @@ import React from 'react'
 
 let stripeHandler = undefined;
 
-if (typeof window !== 'undefined') {
-  stripeHandler = StripeCheckout.configure({
-    key: 'pk_test_U78fJAAuXr0aN5ETF5qSNR1n',
-    locale: 'auto',
-  });
-}
-
 function convertWholeDollarsToCents(dollars) {
   return dollars * 100;
 }
@@ -42,7 +35,15 @@ class Cart extends React.Component {
     this.openStripeCheckout = this.openStripeCheckout.bind(this);
   }
 
+  componentDidMount() {
+    stripeHandler = StripeCheckout.configure({
+      key: 'pk_test_U78fJAAuXr0aN5ETF5qSNR1n',
+      locale: 'auto',
+    });
+  }
+
   openStripeCheckout(event) {
+    event.preventDefault();
 
     const image = this.props.product.images.find(image => image.file.url.includes('black'));
     const imageUrl = image.file.url;
@@ -50,7 +51,6 @@ class Cart extends React.Component {
     const cartItems = this.props.cart.items;
     const totals = calculateProductTotals(cartItems);
 
-    event.preventDefault();
     stripeHandler.open({
       name: 'Unicorn Mart',
       image: imageUrl,

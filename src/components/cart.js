@@ -55,8 +55,25 @@ class Cart extends React.Component {
       billingAddress: true,
       shippingAddress: true,
       amount: convertWholeDollarsToCents(totals.price),
-      token(token, args) {
-        console.log(token, args, this.props.cart);
+      token: (token, args) => {
+        fetch('https://4woaotaoqh.execute-api.us-east-1.amazonaws.com/dev/charges', {
+          method: 'POST',
+          body: JSON.stringify({
+            token,
+            args,
+            cart: this.props.cart,
+            charge: {
+              amount: totals.price,
+              currency: 'USD'
+            },
+          })
+        })
+        .then(response => {
+          console.log(response.json());
+        })
+        .catch(error => {
+          console.log('Fetch failed:' + error);
+        });
       }
     });
   }

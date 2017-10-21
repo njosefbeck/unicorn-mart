@@ -28,11 +28,9 @@ class OptionsForm extends React.Component {
       error = 'Amount can\'t be blank!';
     }
 
-    const price = amount * this.props.product.price;
-
     this.setState({
       amount,
-      price,
+      price: amount * this.props.product.price,
       error
     });
   }
@@ -138,4 +136,4 @@ class OptionsForm extends React.Component {
   }
 }
 
-export default OptionsForm
+export default OptionsForm;

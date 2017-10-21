@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
 import uuid from 'uuid/v4';
 import moment from 'moment';
 
 import './index.css';
-import OptionsFormContainer from '../components/options-form-container'
-import Cart from '../components/cart'
+import OptionsFormContainer from '../components/options-form-container';
+import Cart from '../components/cart';
 
 class IndexPage extends React.Component {
   constructor(props) {
@@ -114,4 +114,4 @@ export const query = graphql`
   }
 `
 
-export default IndexPage
+export default IndexPage;

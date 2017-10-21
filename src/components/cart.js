@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 import {
   convertWholeDollarsToCents,
@@ -30,7 +30,6 @@ class Cart extends React.Component {
 
     const image = this.props.product.images.find(image => image.file.url.includes('black'));
     const imageUrl = image.file.url;
-
     const cartItems = this.props.cart.items;
     const totals = calculateProductTotals(cartItems);
 
@@ -101,20 +100,15 @@ class Cart extends React.Component {
   render() {
     if (!this.props.cart.items.length) {
 
-      return (
-        <p className="status" dangerouslySetInnerHTML={this.renderStatus()} />
-      );
+      return <p className="status" dangerouslySetInnerHTML={this.renderStatus()} />;
 
     } else {
 
       return (
         <div>
           <p className="status" dangerouslySetInnerHTML={this.renderStatus()} />
-
           <button className="buy" name="buy" onClick={(e) => this.openStripeCheckout(e)}>Buy Now!</button>
-
           <button className="clear-cart" name="clear-cart" onClick={this.props.removeAllFromCart}>Clear All</button>
-
           <ul className="cart-items">
             {this.renderCartItems()}
           </ul>
@@ -124,4 +118,4 @@ class Cart extends React.Component {
   }
 }
 
-export default Cart
+export default Cart;

@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-import OptionsForm from './options-form'
+import OptionsForm from './options-form';
 
 class OptionsFormContainer extends React.Component {
   constructor(props) {
@@ -42,4 +42,4 @@ class OptionsFormContainer extends React.Component {
   }
 }
 
-export default OptionsFormContainer
+export default OptionsFormContainer;

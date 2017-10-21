@@ -90,7 +90,7 @@ class Cart extends React.Component {
         <li className="cart-item" key={item.id}>
           <div className="cancel" onClick={(e) => this.removeFromCart(item.id)}>remove</div>
           <img src={image.file.url} alt={image.description} />
-          <p className="description">{item.amount} {item.size}, {item.color} unicorns</p>
+          <p className="description">{item.amount} {item.size}, {item.color} <br/> unicorns</p>
           <p className="price">${item.price}</p>
         </li>
       );

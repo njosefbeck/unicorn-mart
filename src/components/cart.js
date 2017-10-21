@@ -1,7 +1,9 @@
 import React from 'react'
 
+let stripeHandler = undefined;
+
 if (typeof window !== 'undefined') {
-  const stripeHandler = StripeCheckout.configure({
+  stripeHandler = StripeCheckout.configure({
     key: 'pk_test_U78fJAAuXr0aN5ETF5qSNR1n',
     locale: 'auto',
   });

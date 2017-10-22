@@ -2,7 +2,7 @@ import React from 'react';
 
 import {
   convertWholeDollarsToCents,
-  convertCentsToWholeDollars,
+  pluralize,
   calculateProductTotals
 } from '../helpers.js';
 

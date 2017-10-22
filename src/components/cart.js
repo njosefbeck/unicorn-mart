@@ -54,8 +54,10 @@ class Cart extends React.Component {
             },
           })
         })
-        .then(response => {
-          console.log(response.json());
+        .then(response => response.json())
+        .then(json => {
+          this.props.removeAllFromCart();
+          return console.log(json);
         })
         .catch(error => {
           console.log('Fetch failed:' + error);

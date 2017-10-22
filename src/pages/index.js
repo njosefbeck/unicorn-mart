@@ -71,6 +71,8 @@ class IndexPage extends React.Component {
 
         <p className="intro">The real purpose of this website is as a proof of concept e-commerce store powered by Contentful, GatsbyJS, Netlify, serverless, and AWS Lambda. Check out the <a href="https://github.com/njosefbeck/unicorn-mart" target="_blank">repo</a> for more information.</p>
 
+        <p className="intro">You won't be charged and the app won't remember any of your information. Feel free to use credit card number 4242 4242 4242 4242 and any date in the future and any three-digit code to test!</p>
+
         <section>
           <h2>Your Unicorn Options</h2>
           <OptionsFormContainer

@@ -34,10 +34,10 @@ Fourth, serverless and AWS Lambda is fun, and super powerful! The Stripe server-
 
 Fourth, this project could be extended / improved in (I'm sure) a multitude of ways. Notably:
 
-	* Implement Redux (mostly for funsies)
-	* Use Contentful's [Management API](https://www.contentful.com/developers/docs/references/content-management-api/) to show how to decrease inventory and ultimately show if a product is 'sold out' on the front-end
-	* Make a store with multiple products
-	* Implement Stripe Elements instead of Stripe Checkout
-	* Have the serverless AWS Lambda function e-mail a receipt to the customer and an order summary to me 
+* Implement Redux (mostly for funsies)
+* Use Contentful's [Management API](https://www.contentful.com/developers/docs/references/content-management-api/) to show how to decrease inventory and ultimately show if a product is 'sold out' on the front-end
+* Make a store with multiple products
+* Implement Stripe Elements instead of Stripe Checkout
+* Have the serverless AWS Lambda function e-mail a receipt to the customer and an order summary to me 
 
 If you're interested in tackling any of these things, feel free to fork! Also, I'm sure my current code could use some refactoring or cleaning up. Feel free to fork and go wild! :) Any questions or comments, get in touch [via Twitter](https://twitter.com/njosefbeck)!

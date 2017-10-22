@@ -489,13 +489,13 @@ footer {
   font-size: 12px;
 }
 
-footer a {
+a {
   color: #FF0080;
   transition: color 0.5s ease-in-out;
   text-decoration: none;
 }
 
-footer a:hover {
+a:hover {
   color: #FF8C00;
 }
 

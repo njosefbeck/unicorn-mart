@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "Nathan Beck <njosefbeck@gmail.com>",
   "dependencies": {
+    "clay-client": "^0.2.1",
     "dotenv": "^4.0.0",
     "gatsby": "^1.9.63",
     "gatsby-link": "^1.6.21",

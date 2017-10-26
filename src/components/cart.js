@@ -42,7 +42,7 @@ class Cart extends React.Component {
       shippingAddress: true,
       amount: convertWholeDollarsToCents(totals.price),
       token: (token, args) => {
-        fetch('https://4woaotaoqh.execute-api.us-east-1.amazonaws.com/dev/charges', {
+        fetch('https://exec.clay.run/njosefbeck/stripe-checkout', {
           method: 'POST',
           body: JSON.stringify({
             token,

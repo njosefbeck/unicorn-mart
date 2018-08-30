@@ -4,13 +4,14 @@
   "version": "1.0.0",
   "author": "Nathan Beck <njosefbeck@gmail.com>",
   "dependencies": {
-    "gatsby": "^1.9.63",
-    "gatsby-link": "^1.6.21",
-    "gatsby-plugin-google-analytics": "^1.0.10",
-    "gatsby-plugin-react-helmet": "^1.0.5",
-    "gatsby-source-contentful": "^1.3.17",
-    "moment": "^2.19.1",
-    "uuid": "^3.1.0"
+    "gatsby": "1.9.277",
+    "gatsby-link": "1.6.46",
+    "gatsby-plugin-google-analytics": "1.0.31",
+    "gatsby-plugin-react-helmet": "2.0.11",
+    "gatsby-plugin-stripe-checkout": "1.0.5",
+    "gatsby-source-contentful": "1.3.54",
+    "moment": "2.22.2",
+    "uuid": "3.3.2"
   },
   "keywords": [
     "gatsby"
@@ -24,6 +25,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "prettier": "^1.7.4"
+    "prettier": "1.14.2"
   }
 }

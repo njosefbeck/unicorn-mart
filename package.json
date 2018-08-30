@@ -1,7 +1,7 @@
 {
   "name": "unicorn-mart",
   "description": "A proof of concept for an e-commerce store powered by Contentful, Gatsby.js, Stripe, and serverless via clay.run.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Nathan Beck <njosefbeck@gmail.com> https://njosefbeck.com",
   "dependencies": {
     "gatsby": "1.9.277",

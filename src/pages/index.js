@@ -25,8 +25,6 @@ class IndexPage extends React.Component {
   }
 
   handleFormSubmit(product) {
-    event.preventDefault();
-
     const items = [...this.state.cart.items, product];
     
     this.setState({

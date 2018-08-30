@@ -1,14 +1,4 @@
-let contentfulSpaceId = '';
-let contentfulAccessToken = '';
-
-if (process.env.NODE_ENV === 'production') {
-  contentfulSpaceId = process.env.CONTENTFUL_SPACE_ID;
-  contentfulAccessToken = process.env.CONTENTFUL_ACCESS_TOKEN;
-} else {
-  const tokens = require('./tokens');
-  contentfulSpaceId = tokens.CONTENTFUL_SPACE_ID;
-  contentfulAccessToken = tokens.CONTENTFUL_ACCESS_TOKEN;
-}
+require('dotenv').config();
 
 module.exports = {
   siteMetadata: {
@@ -26,8 +16,8 @@ module.exports = {
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        spaceId: contentfulSpaceId,
-        accessToken: contentfulAccessToken,
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
     {

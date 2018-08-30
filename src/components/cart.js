@@ -19,7 +19,7 @@ class Cart extends React.Component {
   }
 
   componentDidMount() {
-    stripeHandler = StripeCheckout.configure({
+    stripeHandler = window.StripeCheckout.configure({
       key: 'pk_test_U78fJAAuXr0aN5ETF5qSNR1n',
       locale: 'auto',
     });

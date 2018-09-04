@@ -4,16 +4,18 @@
   "version": "1.0.1",
   "author": "Nathan Beck <njosefbeck@gmail.com> https://njosefbeck.com",
   "dependencies": {
-    "gatsby": "1.9.277",
-    "gatsby-link": "1.6.46",
-    "gatsby-plugin-google-analytics": "1.0.31",
-    "gatsby-plugin-react-helmet": "2.0.11",
+    "dotenv": "6.0.0",
+    "gatsby": "next",
+    "gatsby-link": "next",
+    "gatsby-plugin-google-analytics": "next",
+    "gatsby-plugin-react-helmet": "next",
     "gatsby-plugin-stripe-checkout": "1.0.5",
-    "gatsby-source-contentful": "1.3.54",
+    "gatsby-source-contentful": "next",
     "moment": "2.22.2",
+    "react": "16.4.2",
+    "react-dom": "16.4.2",
     "react-helmet": "5.2.0",
-    "uuid": "3.3.2",
-    "dotenv": "6.0.0"
+    "uuid": "3.3.2"
   },
   "keywords": [
     "gatsby",

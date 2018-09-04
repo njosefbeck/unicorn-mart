@@ -2,6 +2,8 @@
 
 A proof of concept for an e-commerce store powered by [Contentful](https://contentful.com), [Gatsby.js](https://www.gatsbyjs.org), [Stripe](https://stripe.com/), [Clay](https://www.clay.run), and hosted by [Netlify](https://netlify.com).
 
+**This project has been updated to use Gatsby v2**
+
 ## The Goal
 
 I wanted to create a simple e-commerce solution that leverages the awesomeness that is static generators, while still giving clients a CMS to manage their inventory. My goal is always to get off of using WordPress whenever a CMS is required by a client. Bye bye WordPress!

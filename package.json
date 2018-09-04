@@ -25,6 +25,10 @@
     "stripe",
     "contentful"
   ],
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/njosefbeck/unicorn-mart.git"
+  },
   "license": "MIT",
   "main": "n/a",
   "scripts": {

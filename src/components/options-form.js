@@ -1,6 +1,5 @@
 import React from 'react';
 import uuid from 'uuid/v4';
-
 import { pluralize } from '../helpers.js';
 
 class OptionsForm extends React.Component {

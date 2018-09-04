@@ -6,7 +6,6 @@
   "dependencies": {
     "dotenv": "6.0.0",
     "gatsby": "next",
-    "gatsby-link": "next",
     "gatsby-plugin-google-analytics": "next",
     "gatsby-plugin-react-helmet": "next",
     "gatsby-plugin-stripe-checkout": "1.0.5",
@@ -26,8 +25,8 @@
     "contentful"
   ],
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/njosefbeck/unicorn-mart.git"
+    "type": "git",
+    "url": "https://github.com/njosefbeck/unicorn-mart.git"
   },
   "license": "MIT",
   "main": "n/a",

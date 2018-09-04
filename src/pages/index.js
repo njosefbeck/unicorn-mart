@@ -1,8 +1,9 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 import uuid from 'uuid/v4';
 import moment from 'moment';
-
 import './index.css';
+import Layout from '../components/layout';
 import OptionsFormContainer from '../components/options-form-container';
 import Cart from '../components/cart';
 
@@ -64,7 +65,7 @@ class IndexPage extends React.Component {
 
   render() {
     return (
-      <div>
+      <Layout>
         <p className="intro">Welcome! Here you can pretend buy your very own special unicorn. Pick out the color you want, the size, and we'll pretend to ship it directly to your house. We'll never run out of stock, so buy as many unicorns as you want!</p>
 
         <p className="intro">The real purpose of this website is as a proof of concept e-commerce store powered by Contentful, GatsbyJS, Netlify, serverless, and AWS Lambda. Check out the <a href="https://github.com/njosefbeck/unicorn-mart" target="_blank">repo</a> for more information.</p>
@@ -88,32 +89,30 @@ class IndexPage extends React.Component {
             removeAllFromCart={this.removeAllFromCart}
           />
         </section>
-      </div>
+      </Layout>
     )
   }
-}
+};
 
 export const query = graphql`
-  query ProductsQuery {
-    allContentfulProduct {
-      edges {
-        node {
-          id
-          productId
-          name
-          price
-          images {
-            description
-            file {
-              url
-            }
+  allContentfulProduct {
+    edges {
+      node {
+        id
+        productId
+        name
+        price
+        images {
+          description
+          file {
+            url
           }
-          colors
-          sizes
         }
+        colors
+        sizes
       }
     }
   }
-`
+`;
 
 export default IndexPage;

@@ -1,5 +1,4 @@
 import React from 'react';
-
 import OptionsForm from './options-form';
 
 class OptionsFormContainer extends React.Component {

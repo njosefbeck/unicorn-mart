@@ -68,7 +68,7 @@ class IndexPage extends React.Component {
       <Layout>
         <p className="intro">Welcome! Here you can pretend buy your very own special unicorn. Pick out the color you want, the size, and we'll pretend to ship it directly to your house. We'll never run out of stock, so buy as many unicorns as you want!</p>
 
-        <p className="intro">The real purpose of this website is as a proof of concept e-commerce store powered by Contentful, GatsbyJS, Netlify, serverless, and AWS Lambda. Check out the <a href="https://github.com/njosefbeck/unicorn-mart" target="_blank">repo</a> for more information.</p>
+        <p className="intro">The real purpose of this website is as a proof of concept e-commerce store powered by Contentful, GatsbyJS, Netlify, serverless, and clay.run. Check out the <a href="https://github.com/njosefbeck/unicorn-mart" target="_blank" rel="noopener noreferrer">repo</a> for more information.</p>
 
         <p className="intro">You won't be charged and the app won't remember any of your information. Feel free to use credit card number 4242 4242 4242 4242 and any date in the future and any three-digit code to test!</p>
 
@@ -95,21 +95,23 @@ class IndexPage extends React.Component {
 };
 
 export const query = graphql`
-  allContentfulProduct {
-    edges {
-      node {
-        id
-        productId
-        name
-        price
-        images {
-          description
-          file {
-            url
+  {
+    allContentfulProduct {
+      edges {
+        node {
+          id
+          productId
+          name
+          price
+          images {
+            description
+            file {
+              url
+            }
           }
+          colors
+          sizes
         }
-        colors
-        sizes
       }
     }
   }

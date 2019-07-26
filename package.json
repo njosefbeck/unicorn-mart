@@ -5,11 +5,11 @@
   "author": "Nathan Beck <njosefbeck@gmail.com> https://njosefbeck.com",
   "dependencies": {
     "dotenv": "8.0.0",
-    "gatsby": "2.7.1",
-    "gatsby-plugin-google-analytics": "2.0.20",
-    "gatsby-plugin-react-helmet": "3.0.12",
-    "gatsby-plugin-stripe-checkout": "1.1.2",
-    "gatsby-source-contentful": "2.0.62",
+    "gatsby": "2.13.41",
+    "gatsby-plugin-google-analytics": "2.1.4",
+    "gatsby-plugin-react-helmet": "3.1.2",
+    "gatsby-plugin-stripe-checkout": "1.1.4",
+    "gatsby-source-contentful": "2.1.15",
     "moment": "2.24.0",
     "react": "16.8.6",
     "react-dom": "16.8.6",
@@ -37,6 +37,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "prettier": "1.14.2"
+    "prettier": "1.18.2"
   }
 }

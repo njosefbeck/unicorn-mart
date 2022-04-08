@@ -10,7 +10,7 @@
     "gatsby-plugin-react-helmet": "3.1.2",
     "gatsby-plugin-stripe-checkout": "1.1.4",
     "gatsby-source-contentful": "2.1.15",
-    "moment": "2.24.0",
+    "moment": "2.29.2",
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "react-helmet": "5.2.1",

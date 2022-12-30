@@ -5,7 +5,7 @@
   "author": "Nathan Beck <njosefbeck@gmail.com> https://njosefbeck.com",
   "dependencies": {
     "dotenv": "8.0.0",
-    "gatsby": "2.13.41",
+    "gatsby": "2.32.13",
     "gatsby-plugin-google-analytics": "2.1.4",
     "gatsby-plugin-react-helmet": "3.1.2",
     "gatsby-plugin-stripe-checkout": "1.1.4",
